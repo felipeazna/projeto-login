@@ -12,39 +12,49 @@
     box-sizing: border-box;
 }
 
-body {
-    position: relative;
+body, html {
     width: 100vw;
     height: 100vh;
     background-color: #5f2c82;
 }
 
 main {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+#login {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     background-color: white;
     width: 270px;
     height: 520px;
+    overflow: hidden;
     border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.479);
+    transition: width .3s, height .3s;
+    transition-timing-function: ease;
+    transform: translate(-50%, -50%);
 }
 
 #imagem {
-    background: black url(../imagens/imagem.jpg) no-repeat;
+    display: block;
+    background: #5f2c82 url(../imagens/imagem.jpg) no-repeat;
     background-size: cover;
     width: 270px;
     height: 200px;
-    border-radius: 20px 20px 0 0;
-}
-
-h1 {
-    text-align: center;
-    padding: 15px;
 }
 
 #formulario {
-    padding: 0 10px 20px 10px;    
+    display: block;
+    padding: 10px;    
+}
+
+#formulario > h1 {
+    text-align: center;
+    padding: 10px;
 }
 
 #formulario > p {
@@ -53,102 +63,70 @@ h1 {
     padding-bottom: 5px;
 }
 
-#email {
-    position: relative;
-    width: 250px;
-    height: 40px;
+.campo {
     background-color: #5f2c82;
-    margin-bottom: 5px;
-    border-radius: 10px;
+    border: 2px solid #5f2c82;
+    height: 40px;
+    border-radius: 8px;
+    margin: 5px 0;
 }
 
-.material-symbols-outlined{
+.campo > label {
+    display: none;
+}
+
+.campo > span {
     color: white;
-    padding: 10px;
+    font-size: 2em;
+    width: 40px;
+    padding: 5px;
 }
 
-#email > input {
-    position: absolute;
-    top: 50%;
-    left: 58%;
-    transform: translate(-50%, -50%);
-    background-color: #94CFCD;
-    border-radius: 10px;
-    font-size: 1.2em;
-    height: 33px;
-    width: 200px;
-    text-indent: 10px;
+.campo > input {
+    background-color: #9ef0ed;
+    font-size: 1em;
+    width: calc(100% - 45px);
+    height: 100%;
+    border: 0px;
+    border-radius: 8px;
+    padding: 4px;
+    transform: translateY(-14px);
 }
 
-#senha {
-    position: relative;
-    width: 250px;
-    height: 40px;
-    background-color: #5f2c82;
-    border-radius: 10px;
+.campo > input:focus-within {
+    background-color: white;
 }
 
-#senha > input {
-    position: absolute;
-    top: 50%;
-    left: 58%;
-    transform: translate(-50%, -50%);
-    background-color: #94CFCD;
-    border-radius: 10px;
-    font-size: 1.2em;
-    height: 33px;
-    width: 200px;
-    text-indent: 10px;
-}
-
-#entrar {
-    position: relative;
-    width: 250px;
-    height: 40px;
-    border-radius: 10px;
-    margin-top: 5px;
-    background-color: #49a09d;
-}
-
-#entrar > input {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 250px;
+form > input[type=submit] {
+    display: block;
+    font-size: 1em;
+    width: 100%;
     height: 40px;
     background-color: #49a09d;
-    border: 1px solid #49a09d;
+    color: white;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    color: white;
-    border-radius: 10px;
-    font-size: 1.1em;
 }
 
-#entrar > input:hover {
-    background-color: #285c5a;
+form > input[type=submit]:hover {
+    background-color: #265352;
 }
 
-#esqueceu {
-    position: relative;
-    width: 250px;
-    height: 40px;
-    border-radius: 10px;
-    margin-top: 5px;
-    border: 1px solid #49a09d;
-}
-
-#esqueceu:hover {
-    background-color: #6addd9;
-}
-
-#esqueceu > p {
-    position: absolute;
-    top: 50%;
-    left: 20%;
-    transform: translate(0, -50%);
+.botao {
+    display: block;
     text-align: center;
+    font-size: 1em;
+    width: 100%;
+    height: 40px;
+    border: 1px solid #49a09d;
+    color: #265352;
+    border-radius: 5px;
     text-decoration: none;
-    color: #2b6664;
+    padding: 10px;
+    margin-top: 5px;
 }
 
+.botao:hover {
+    background-color: #8ee2df;
+}
